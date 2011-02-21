@@ -1,0 +1,46 @@
+//Version definisions for Kabala Engine
+
+#ifndef _KEVERSION_H_
+#define _KEVERSION_H_
+
+#include <OpenSG/OSGConfig.h>
+#include <OpenSG/OSGBaseTypes.h>
+#include <string>
+
+inline
+::OSG::UInt32 getGUIBuilderMajorVersion(void)
+{
+	return @GUI_BUILDER_MAJOR_VERSION@;
+}
+
+inline
+::OSG::UInt32 getGUIBuilderMinorVersion(void)
+{
+	return @GUI_BUILDER_MINOR_VERSION@;
+}
+
+inline
+::OSG::UInt32 getGUIBuilderPatchVersion(void)
+{
+	return @GUI_BUILDER_PATCH_VERSION@;
+}
+
+inline
+std::string getGUIBuilderVersion(void)
+{
+	return "@GUI_BUILDER_VERSION@";
+}
+
+inline
+std::string getGUIBuilderBuildType(void)
+{
+#ifdef WIN32
+	return CMAKE_INTDIR;
+#else
+	return "@GUI_BUILDER_BUILD_TYPE@";
+#endif
+}
+
+
+#endif
+
